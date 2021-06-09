@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="120dp"
             android:layout_marginTop="250dp"
-            android:layout_marginEnd="100dp"
+            android:layout_marginEnd="80dp"
             android:text="Contact Us"
             android:textSize="35sp"
             android:textStyle="bold"
@@ -43,7 +43,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="35dp"
             android:layout_marginEnd="32dp"
-            android:hint="Subject...">
+            android:hint="Subject">
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
