@@ -1,0 +1,44 @@
+<resources>
+
+    <string name="app_name">Group5</string>
+    <string name="leader">Leader</string>
+    <string name="member">Member</string>
+
+    <string name="learn_android">Learn Android</string>
+
+    <string name="vision">The Laguna State Polytechnic University is a center of sustainable development initiatives transforming lives and communities</string>
+    <string name="mission">LSPU provides quality education through responsive instruction, distinctive research, sustainable extension and production services for improved quality of life</string>
+    <string name="page_title">Our Team</string>
+
+    <string-array name="person">
+        <item>Robert Miras</item>
+        <item>Calabia Nathaniel</item>
+        <item>Nitro JC</item>
+        <item>Bernales Leynard</item>
+        <item>Pereja Airman</item>
+        <item>Errol Juliano</item>
+        <item>Cabutin Marvin</item>
+    </string-array>
+
+    <string-array name="birthdays">
+        <item>March 13, 2001</item>
+        <item>October 10, 2000</item>
+        <item>January 05, 2001</item>
+        <item>January 15, 1998</item>
+        <item>May 19, 2001</item>
+        <item>October 19, 1999</item>
+        <item>June 12, 2000</item>
+    </string-array>
+
+    <string-array name="title">
+        <item>Leader</item>
+        <item>Member</item>
+        <item>Member</item>
+        <item>Member</item>
+        <item>Member</item>
+        <item>Member</item>
+        <item>Member</item>
+    </string-array>
+
+
+</resources>

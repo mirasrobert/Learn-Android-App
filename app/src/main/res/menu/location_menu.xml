@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/robert"
+        android:icon="@drawable/ic_contact_mail"
+        android:title="Robert Miras"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/jc"
+        android:title="JC Nitro"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/airman"
+        android:title="Airman Pereja"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/nathan"
+        android:title="Nathaniel Calabia"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/marvin"
+        android:title="Marvin Cabutin"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/leynard"
+        android:title="Leynard Bernales"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/errol"
+        android:title="MC Errol Juliano"
+        app:showAsAction="never" />
+
+</menu>

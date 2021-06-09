@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/contact"
+        android:icon="@drawable/ic_contact_mail"
+        android:title="Configure"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/more"
+        android:title="More"
+        app:showAsAction="never">
+
+        <menu>
+
+            <item android:id="@+id/location"
+                android:title="Location" />
+
+            <item android:id="@+id/fb"
+                android:title="Social Media"/>
+
+        </menu>
+
+    </item>
+
+    <item android:id="@+id/youtube"
+        android:title="YouTube"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/about"
+        android:title="About"
+        app:showAsAction="never" />
+
+<!--    <item android:id="@+id/item4"-->
+<!--        android:title="Exit"-->
+<!--        app:showAsAction="never" />-->
+</menu>
