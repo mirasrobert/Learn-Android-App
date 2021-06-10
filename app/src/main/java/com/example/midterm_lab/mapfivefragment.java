@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class mapfivefragment extends Fragment {
+
+    final String TAG = "mapfive";
 
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
@@ -42,6 +46,10 @@ public class mapfivefragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
+        //dito ko na sinimulan yung log
+        Log.d(TAG, "mapfivefragment : onCreateView");
+
         return inflater.inflate(R.layout.fragment_mapfivefragment, container, false);
     }
 
@@ -53,5 +61,20 @@ public class mapfivefragment extends Fragment {
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
         }
+        //sunod
+        Log.d(TAG, "mapfivefragment : onViewCreated");
     }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        Log.d(TAG, "mapfivefragment : onAttach");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d(TAG,"mapfivefragment : onResume");
+    }
+
 }

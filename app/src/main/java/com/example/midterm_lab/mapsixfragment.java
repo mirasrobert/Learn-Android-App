@@ -32,7 +32,7 @@ public class mapsixfragment extends Fragment {
         @Override
         public void onMapReady(GoogleMap googleMap) {
             LatLng stacruz = new LatLng(14.279100, 121.398703);
-            googleMap.addMarker(new MarkerOptions().position(stacruz).title("Marker in Sydney"));
+            googleMap.addMarker(new MarkerOptions().position(stacruz).title("Marker in Sta. Cruz Laguna"));
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(stacruz,15f));
         }
     };
