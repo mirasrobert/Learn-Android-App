@@ -16,7 +16,7 @@ public class activity_lspu extends AppCompatActivity {
 
     private static final String TAG = "lspuActivity";
 
-    Animation topAnim, bottomAnim;
+    Animation leftAnim, rightAnim;
     CardView visionCard, missionCard;
     TextView vision, visionText, mission, missionText;
 
@@ -37,11 +37,11 @@ public class activity_lspu extends AppCompatActivity {
         visionCard = findViewById(R.id.visionCard);
         missionCard = findViewById(R.id.missionCard);
 
-        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
-        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
+        leftAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
+        rightAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 
         // Start animation
-        startAnimation(topAnim, bottomAnim);
+        startAnimation(leftAnim, rightAnim);
 
     }
 

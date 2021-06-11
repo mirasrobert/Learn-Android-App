@@ -7,7 +7,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -22,11 +25,33 @@ import java.util.ArrayList;
 
 public class activity_location extends AppCompatActivity {
 
+    final String TAG = "LocationActivity";
+    // Dito na yung Broadcastlistener then sa baba yung override
+
+    NetworkChangeListener networkChangeListener = new NetworkChangeListener();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_location);
+    }
+
+    @Override
+    protected void onStart() {
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(networkChangeListener, filter);
+        super.onStart();
+        Log.d(TAG, "LocationActivity : onStart");
+    }
+
+    @Override
+    protected void onStop() {
+        unregisterReceiver(networkChangeListener);
+        super.onStop();
+        Log.d(TAG, "LocationActivity : onStop");
+        ;
 
     }
 
@@ -83,8 +108,33 @@ public class activity_location extends AppCompatActivity {
                 replaceFragmentForGoogleMap(new mapsevenfragment());
                 return true;
 
-            default:return super.onOptionsItemSelected(item);
+            default:
+                return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Log.d(TAG,"LocationActivity : onResume");
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.d(TAG,"LocationActivity : onPaused");
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.d(TAG,"LocationActivity : onDestroy");
+    }
+
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        Log.d(TAG,"LocationActivity : onRestart");
 
     }
 

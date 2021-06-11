@@ -44,6 +44,7 @@ public class activity_loading extends AppCompatActivity {
     public void nextActivity()  {
         Intent intent = new Intent(this, activity_menu.class);
         startActivity(intent);
+        finish();
     }
 
     @Override

@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     //Broadcast receiver
 
-    BroadcastReceiver broadcastReceiver;
 
     String person[], birthdays[], title[];
     int images[] = {R.drawable.person1, R.drawable.person2, R.drawable.person3, R.drawable.person4, R.drawable.person5, R.drawable.person6, R.drawable.person7};
@@ -50,34 +49,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new RecyclerAdapter(this, person, birthdays, images, title);
         recyclerView.setAdapter(adapter);
-
-
-        // Init broadcast receiver for network connection
-        broadcastReceiver = new NetworkChangeReceiver();
-        registerNetworkBroadcastReceiver();
-    }
-
-    protected void registerNetworkBroadcastReceiver(){
-
-        // Target Android OS For Nougat or later
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.N){
-            registerReceiver(broadcastReceiver,new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-        }
-
-        // Target Android OS For Marshmallow or later
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-            registerReceiver(broadcastReceiver,new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-        }
-    }
-
-    //para sa unregister method
-    protected void unregisterNetwrok(){
-        try{
-            unregisterReceiver(broadcastReceiver);
-        }
-        catch (IllegalArgumentException e){
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -108,8 +79,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy(){
         super.onDestroy();
         Log.i(TAG,"onDestroy");
-        //para daw may log kung na destroy na or hindi
-        unregisterNetwrok();
+
     }
 
     @Override

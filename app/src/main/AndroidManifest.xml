@@ -24,13 +24,6 @@
         <!--
             auto na to pero pinataggal
         -->
-        <receiver
-            android:name=".NetworkChangeReceiver"
-           >
-            <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
-            </intent-filter>
-        </receiver>
 
         <activity android:name=".activity_facebook" />
         <!--

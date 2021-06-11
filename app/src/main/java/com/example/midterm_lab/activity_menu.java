@@ -1,10 +1,14 @@
 package com.example.midterm_lab;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -32,7 +36,7 @@ public class activity_menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_menu);
-        Log.i(TAG,"onCreate");
+        Log.i(TAG, "onCreate");
 
 
         ourteamCard = findViewById(R.id.ourTeamCard);
@@ -65,20 +69,17 @@ public class activity_menu extends AppCompatActivity {
         });
     }
 
-    public void goToOurTeam()
-    {
+    public void goToOurTeam() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
-    public void goToLSPU()
-    {
+    public void goToLSPU() {
         Intent intent = new Intent(this, activity_lspu.class);
         startActivity(intent);
     }
 
-    private void startAnimation(Animation topAnim, Animation bottomAnim)
-    {
+    private void startAnimation(Animation topAnim, Animation bottomAnim) {
         ourteamCard.setAnimation(topAnim);
         ourteamImg.setAnimation(topAnim);
         ourteam.setAnimation(topAnim);
@@ -89,39 +90,39 @@ public class activity_menu extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
-        Log.i(TAG,"onStart");
+        Log.i(TAG, "onStart");
     }
 
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
-        Log.i(TAG,"onResume");
+        Log.i(TAG, "onResume");
     }
 
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
-        Log.i(TAG,"onPause");
+        Log.i(TAG, "onPause");
     }
 
     @Override
-    protected void onStop(){
+    protected void onStop() {
         super.onStop();
-        Log.i(TAG,"onStop");
+        Log.i(TAG, "onStop");
     }
 
     @Override
-    protected void onDestroy(){
+    protected void onDestroy() {
         super.onDestroy();
-        Log.i(TAG,"onDestroy");
+        Log.i(TAG, "onDestroy");
     }
 
     @Override
-    protected void onRestart(){
+    protected void onRestart() {
         super.onRestart();
-        Log.i(TAG,"onRestart");
+        Log.i(TAG, "onRestart");
     }
 
     // Show Menu
@@ -157,8 +158,35 @@ public class activity_menu extends AppCompatActivity {
                 Intent intent4 = new Intent(this, activity_location.class);
                 startActivity(intent4);
                 return true;
-            default:return super.onOptionsItemSelected(item);
+            case R.id.exit:
+                exit();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void exit() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Exit?");
+        builder.setCancelable(true);
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+                //finishAndRemoveTask();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
 
     }
 }

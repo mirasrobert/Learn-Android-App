@@ -21,7 +21,7 @@
             android:layout_height="0dp">
 
             <TextView
-                android:id="@+id/textGrid"
+                android:id="@+id/profiletxt"
                 android:text="                        PROFILE"
                 android:textSize="34sp"
                 android:textColor="@android:color/holo_blue_dark"
@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content" />
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/fbicon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_centerInParent="true"
@@ -54,6 +54,7 @@
 
             <!-- Column 1 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/robertcard"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
@@ -75,6 +76,7 @@
 
                     <ImageView
                         android:src="@drawable/person1"
+                        android:id="@+id/robert"
                         android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -86,6 +88,7 @@
 
             <!-- Column 2 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/nathancard"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
@@ -106,6 +109,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/nathan"
                         android:src="@drawable/person2"
                         android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
@@ -121,6 +125,7 @@
 
             <!-- Column 1 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/jccard"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
@@ -141,6 +146,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/jc"
                         android:src="@drawable/person3"
                         android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
@@ -153,6 +159,7 @@
 
             <!-- Column 2 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/leynardcard"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
@@ -173,6 +180,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/leynard"
                         android:src="@drawable/person4"
                         android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
@@ -188,6 +196,7 @@
 
             <!-- Column 1 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/airmancard"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
@@ -208,6 +217,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/airman"
                         android:src="@drawable/person5"
                         android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
@@ -220,6 +230,7 @@
 
             <!-- Column 2 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/mcerrolcard"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
@@ -240,6 +251,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/mcerrol"
                         android:src="@drawable/person6"
                         android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
@@ -251,6 +263,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/marvincard"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
@@ -271,6 +284,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/marvin"
                         android:src="@drawable/person7"
                         android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
