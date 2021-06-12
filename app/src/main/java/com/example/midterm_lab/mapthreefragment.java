@@ -75,4 +75,24 @@ public class mapthreefragment extends Fragment {
         super.onResume();
         Log.d(TAG, "mapfragthree : onResume");
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.d(TAG, "mapfragthree : onStop");
+    }
+
+    // called to do final cleanup of the fragment's state.
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "mapfragthree : onDestroy");
+    }
+
+    // called immediately prior to the fragment no longer being associated with its activity.
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        Log.d(TAG, "mapfragthree : onDetach");
+    }
 }

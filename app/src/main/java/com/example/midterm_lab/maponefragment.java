@@ -71,6 +71,7 @@ public class maponefragment extends Fragment {
     * Because sometimes view is not properly initialized. So always use findViewById in
     * onViewCreated(when view is fully created)
     * and it also passes the view as parameter.
+    * onViewCreated is a make sure that view is fully created.
      */
 
     @Override

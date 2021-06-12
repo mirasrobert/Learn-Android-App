@@ -77,4 +77,24 @@ public class mapfivefragment extends Fragment {
         Log.d(TAG,"mapfivefragment : onResume");
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.d(TAG, "mapfivefragment : onStop");
+    }
+
+    // called to do final cleanup of the fragment's state.
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "mapfivefragment : onDestroy");
+    }
+
+    // called immediately prior to the fragment no longer being associated with its activity.
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        Log.d(TAG, "mapfivefragment : onDetach");
+    }
+
 }

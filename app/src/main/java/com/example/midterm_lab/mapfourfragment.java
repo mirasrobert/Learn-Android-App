@@ -75,4 +75,24 @@ public class mapfourfragment extends Fragment {
         super.onResume();
         Log.d(TAG, "mapfragfour : onResume");
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.d(TAG, "mapfragfour : onStop");
+    }
+
+    // called to do final cleanup of the fragment's state.
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "mapfragfour : onDestroy");
+    }
+
+    // called immediately prior to the fragment no longer being associated with its activity.
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        Log.d(TAG, "mapfragfour : onDetach");
+    }
 }

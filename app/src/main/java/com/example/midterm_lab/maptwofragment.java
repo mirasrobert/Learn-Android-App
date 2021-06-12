@@ -75,12 +75,32 @@ public class    maptwofragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        Toast.makeText(getActivity(), "MapFragOne : onPause", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "mapfragtwo : onPause");
     }
 
     @Override
     public void onResume() {
         super.onResume();
         Log.d(TAG, "mapfragtwo : onResume");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.d(TAG, "mapfragtwo : onStop");
+    }
+
+    // called to do final cleanup of the fragment's state.
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "mapfragtwo : onDestroy");
+    }
+
+    // called immediately prior to the fragment no longer being associated with its activity.
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        Log.d(TAG, "mapfragtwo : onDetach");
     }
 }
