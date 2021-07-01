@@ -10,4 +10,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="btncolor">#FF6EEC</color>
+    <color name="semi_black"> #404040</color>
+
+
+
 </resources>

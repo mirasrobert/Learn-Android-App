@@ -19,6 +19,9 @@
             <item android:id="@+id/fb"
                 android:title="Social Media"/>
 
+            <item android:id="@+id/settings"
+                android:title="Settings"/>
+
         </menu>
 
     </item>

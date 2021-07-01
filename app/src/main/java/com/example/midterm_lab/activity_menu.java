@@ -8,6 +8,7 @@ import androidx.cardview.widget.CardView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,12 +25,16 @@ import android.widget.Toast;
 
 public class activity_menu extends AppCompatActivity {
 
+    View parentView; // Layout Id
+
+    UserSettings settings; // Settings Id
+
     private static final String TAG = "menuActivity";
 
     Animation topAnim, bottomAnim;
     CardView ourteamCard, lspuCard;
     ImageView ourteamImg, lspuImg;
-    TextView ourteam, lspu;
+    TextView ourteam, lspu, menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +43,10 @@ public class activity_menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         Log.i(TAG, "onCreate");
 
+        settings = (UserSettings) getApplication();
+        initWidgets(); // Init Views
 
-        ourteamCard = findViewById(R.id.ourTeamCard);
-        lspuCard = findViewById(R.id.lspuCard);
-
-        ourteamImg = findViewById(R.id.ourTeamImg);
-        lspuImg = findViewById(R.id.lspuImg);
-
-        ourteam = findViewById(R.id.ourteam);
-        lspu = findViewById(R.id.lspu);
+        loadSharedPreferences(); // Load the sharedPref and Theme.
 
         topAnim = AnimationUtils.loadAnimation(this, R.anim.getstarted_top);
         bottomAnim = AnimationUtils.loadAnimation(this, R.anim.getstarted_bottom);
@@ -67,6 +67,56 @@ public class activity_menu extends AppCompatActivity {
                 goToLSPU();
             }
         });
+    }
+
+    // Init Views
+    public void initWidgets() {
+        parentView = findViewById(R.id.parentView);
+
+        ourteamCard = findViewById(R.id.ourTeamCard);
+        lspuCard = findViewById(R.id.lspuCard);
+
+        ourteamImg = findViewById(R.id.ourTeamImg);
+        lspuImg = findViewById(R.id.lspuImg);
+
+        ourteam = findViewById(R.id.ourteam);
+        lspu = findViewById(R.id.lspu);
+
+        menu = findViewById(R.id.menu);
+    }
+
+    // Load SharedPref and Theme
+    private void loadSharedPreferences() {
+        SharedPreferences sharedPreferences = getSharedPreferences(UserSettings.PREFERENCES, MODE_PRIVATE);
+        String theme = sharedPreferences.getString(UserSettings.CUSTOM_THEME, null);
+
+        Toast.makeText(settings, theme, Toast.LENGTH_SHORT).show();
+
+        settings.setCustomTheme(theme);
+        applyTheme();
+    }
+
+    // Apply Theme
+    private void applyTheme() {
+
+        if(settings.getCustomTheme().equals(UserSettings.DARK_THEME)) {
+
+            ourteamCard.setCardBackgroundColor(this.getResources().getColor(R.color.black));
+            lspuCard.setCardBackgroundColor(this.getResources().getColor(R.color.black));
+            ourteam.setTextColor(this.getResources().getColor(R.color.purple));
+            lspu.setTextColor(this.getResources().getColor(R.color.purple));
+            menu.setTextColor(this.getResources().getColor(R.color.white));
+
+            parentView.setBackgroundColor(this.getResources().getColor(R.color.semi_black));
+
+        } else {
+
+            ourteamCard.setCardBackgroundColor(this.getResources().getColor(R.color.white));
+            lspuCard.setCardBackgroundColor(this.getResources().getColor(R.color.white));
+            parentView.setBackground(this.getResources().getDrawable(R.drawable.bg_main_activity));
+
+        }
+
     }
 
     public void goToOurTeam() {
@@ -157,6 +207,10 @@ public class activity_menu extends AppCompatActivity {
             case R.id.location:
                 Intent intent4 = new Intent(this, activity_location.class);
                 startActivity(intent4);
+                return true;
+            case R.id.settings:
+                Intent intent5 = new Intent(this, activity_settings.class);
+                startActivity(intent5);
                 return true;
             case R.id.exit:
                 exit();

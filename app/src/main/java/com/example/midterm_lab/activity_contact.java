@@ -76,7 +76,7 @@ public class activity_contact extends AppCompatActivity {
             String[] array = {"airmanpereja34@gmail.com"};
             i.putExtra(Intent.EXTRA_EMAIL, array);
             i.putExtra(Intent.EXTRA_SUBJECT, subject);
-            i.putExtra(Intent.EXTRA_TEXT, feedback);
+            subject = subjectTxt.getText().toString();
 
             //Check if user has some application that can handle email
             if (i.resolveActivity(getPackageManager()) != null )
